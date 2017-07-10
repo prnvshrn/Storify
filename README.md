@@ -9,3 +9,11 @@ Back end :- Python, Django <br/>
 Databases :- Sqlite
 
 ## Screenshots:
+Screenshot 1:
+![alt text](/screenshot-3.png)<br/><br/>
+
+Screenshot 2:
+![alt text](/screenshot-1.png)<br/><br/>
+
+Screenshot 3:
+![alt text](/screenshot-2.png)<br/><br/>
