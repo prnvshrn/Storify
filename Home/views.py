@@ -45,7 +45,6 @@ def openWelcome(request):
     else:
         template = loader.get_template('Welcome.html')
         context = {}
-        storify_db = Storify_database.objects.get(writer='Pranav')
         return HttpResponse(template.render(context, request))
 
 
