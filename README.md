@@ -1,7 +1,7 @@
-# Storify
+![alt text](/storify-logo.png)<br/>
 
 ## Introduction:
-A Django based application that allows users to publish and view short stories under an anonymous username of their choice
+Storify is a Django-based application that allows users to publish and view short stories under an anonymous username of their choice
 
 ## Technologies used:
 Front end :- HTML, JavaScript, BootStrap, Jinja <br/>
