@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load staticfiles %}
+    <link href="{% static '/' %}">
+    <title>Title</title>
+
+    <style>
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+</style>
+
+</head>
+
+<body style="background-color: #35586C;">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="pull-left" href="#"><img src="{% static 'storify-logo.png' %}" height="35" width="100" style="padding-top: 5px"/></a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left: 30px;">
+            <li style="padding-left: 30px;"><a href="/Home.html">Home</a></li>
+            <li style="padding-left: 30px;"><a href="/AddStory.html">Add story</a></li>
+            <li style="padding-left: 30px;"><a href="/About.html">About</a></li>
+            <li style="padding-left: 30px;"><a href="/">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav" style="float:right">
+            <li ><a href="#">Username : {{ username }}</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <center>
+      <img src="{% static 'storify-logo.png' %}">
+      <h2 style="color:floralwhite">
+          Developed by Pranav Sharan. You can reach me on my email at prnvshrn@gmail.com.
+      </h2>
+      </center>
+    </div>
+  </div>
+</div>
+</body>
+
+
+</html>

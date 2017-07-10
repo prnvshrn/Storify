@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% load staticfiles %}
+    <link href="{% static '/' %}">
+    <title>Storify</title>
+
+    <script type="text/javascript">
+        function getCategory()
+        {
+            var e = document.getElementById('CategoryTextbox1');
+            var strUser = e.options[e.selectedIndex].text;
+            document.getElementById('CategoryTextbox').value = strUser;
+        }
+    </script>
+
+</head>
+
+<body style="background-color: #35586C;">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="pull-left" href="#"><img src="{% static 'storify-logo.png' %}" height="35" width="100" style="padding-top: 5px"/></a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left: 30px;">
+            <li style="padding-left: 30px;"><a href="/Home.html">Home</a></li>
+            <li style="padding-left: 30px;"><a href="/AddStory.html">Add story</a></li>
+            <li style="padding-left: 30px;"><a href="/About.html">About</a></li>
+            <li style="padding-left: 30px;"><a href="/">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav" style="float:right">
+            <li ><a href="#">Username : {{ username }}</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="container">
+    <form style="background-color: bisque;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px" action="" method="post">
+    {% csrf_token %}
+        <div class="form-group">
+      <label for="TitleTextbox">Title:</label>
+      <input type="text" class="form-control" id="TitleTextbox" placeholder="Enter title of your story" name="TitleTextbox">
+    </div>
+
+    <div class="form-group">
+      <label for="SynopsisTextbox">Synopsis:</label>
+      <input type="text" class="form-control" id="SynopsisTextbox" placeholder="Enter synopsis of your story here" name="SynopsisTextbox">
+    </div>
+
+    <div class="form-group">
+      <label for="CategoryTextbox">Category:</label>
+      <select class="form-control" id="CategoryTextbox" name="CategoryTextbox">
+        <option>Action</option>
+        <option>Children</option>
+        <option>Horror</option>
+        <option>Non Fiction</option>
+        <option>Romance</option>
+        <option>Science Fiction</option>
+        <option>Thriller</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="ContentTextbox">Content:</label>
+        <textarea rows="9" class="form-control" id="ContentTextbox" placeholder="Enter content of your story here" name="ContentTextbox"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" style="width:100%">PUBLISH YOUR STORY</button>
+    </div><div class="form-group">
+    <button type="reset" class="btn btn-warning" style="width:100%">RESET THE FIELDS</button>
+    </div>
+
+    </form>
+</div>
+
+</body>
+
+</html>

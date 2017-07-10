@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Title</title>
+{% load staticfiles %}
+    <link href="{% static '/' %}">
+     <style>
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+</style>
+
+</head>
+<body style="background-color: #35586C;">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="pull-left" href="#"><img src="{% static 'storify-logo.png' %}" height="35" width="100" style="padding-top: 5px"/></a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left: 30px;">
+            <li style="padding-left: 30px;"><a href="/Home.html">Home</a></li>
+            <li style="padding-left: 30px;"><a href="/AddStory.html">Add story</a></li>
+            <li style="padding-left: 30px;"><a href="/About.html">About</a></li>
+            <li style="padding-left: 30px;"><a href="/">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav" style="float:right">
+            <li ><a href="#">Username : {{ username }}</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+    <div class="inner" style="background-color: bisque;padding-left: 10px;padding-right: 10px;">
+      <div style="padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px">
+      <h2>{{ title_list.title }}</h2>
+      <h4> By {{ title_list.writer }}</h4>
+      <h4>{{ title_list.content | linebreaks }}</h4>
+      </div>
+    </div>
+
+
+
+</body>
+</html>

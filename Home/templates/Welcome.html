@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load staticfiles %}
+    <link href="{% static '/' %}">
+    <title>Title</title>
+
+    <style>
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+</style>
+
+</head>
+
+
+
+<body style="background-color: #35586C;">
+
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <center>
+      <img src="{% static 'storify-logo.png' %}">
+      <h2 style="color:floralwhite">Welcome to Storify where you can share your short stories anonymously. Get Started by entering a username in the textbox provided below</h2>
+      <form action="" method="post" >
+          {% csrf_token %}
+          <input type="text" maxlength="20" style="font-size: 20px" placeholder="Username" id="UsernameTextbox" name="UsernameTextbox">
+          <button type="submit" class="btn btn-success" style="padding-left: 10px;width: 50px">GO</button>
+      </form>
+      </center>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

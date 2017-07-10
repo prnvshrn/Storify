@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load staticfiles %}
+    <link href="{% static '/' %}">
+    <title>Storify</title>
+</head>
+
+<body style="background-color: #35586C;">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="pull-left" href="#"><img src="{% static 'storify-logo.png' %}" height="35" width="100" style="padding-top: 5px"/></a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left: 30px;">
+            <li style="padding-left: 30px;"><a href="/Home.html">Home</a></li>
+            <li style="padding-left: 30px;"><a href="/AddStory.html">Add story</a></li>
+            <li style="padding-left: 30px;"><a href="/About.html">About</a></li>
+            <li style="padding-left: 30px;"><a href="/">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav" style="float:right">
+            <li ><a href="#">Username : {{ username }}</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="row" style="padding-left: 10px;padding-right: 10px">
+    <div class="col-sm-12">
+        <center>
+        <table class="table table-hover" id="table_tablenames" style="padding-left: 10px;padding-right: 10px">
+            <th style="background-color: #DDA0DD" class="info">Category</th>
+            <th style="background-color: #DDA0DD">Title</th>
+            <th style="background-color: #DDA0DD">Writer</th>
+            <th style="background-color: #DDA0DD">Synopsis</th>
+            {% for row in title_list %}
+                <tr class="warning">
+
+                {% for d in row %}
+                    <td>
+                    {% if forloop.counter == 4 %}
+                    <A id="test" name="test" HREF="/Details.html?query_name={{ d|urlencode }}">{{ d }}</A>
+                    {% else %}
+                        {{ d }}
+                    {% endif %}
+                    </td>
+
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        </center>
+    </div>
+</div>
+
+</body>
+
+</html>
