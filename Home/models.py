@@ -8,7 +8,7 @@ class Storify_database(models.Model):
     date = models.DateTimeField
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=600)
-    writer = models.CharField(max_length=50)
+    writer = models.CharField(max_length=60)
     category = models.CharField(max_length=20)
     synopsis = models.CharField(max_length=150, default='Synopsis Unavailable')
 
